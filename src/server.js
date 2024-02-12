@@ -1,10 +1,13 @@
-import http from "http";
+import express from "express";
 
-http
-  .createServer(function (req, res) {
-    res.write("this is backend!");
-    res.end();
-  })
-  .listen(5000);
+const app = express();
 
-console.log("Backend server running at port 5000");
+app.get("/", (req, res) => {
+  console.log("hello from express");
+  res.status(200);
+  res.json({ message: "hello" });
+});
+
+app.listen(5000, () => {
+  console.log("5000 port started");
+});
