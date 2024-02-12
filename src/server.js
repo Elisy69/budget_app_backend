@@ -2,7 +2,7 @@ import http from "http";
 
 http
   .createServer(function (req, res) {
-    res.write("this is backend!");
+    res.write("this is backend!", "toJSON()");
     res.end();
   })
   .listen(5000);
