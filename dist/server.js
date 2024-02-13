@@ -2,11 +2,9 @@ import express from "express";
 const app = express();
 const router = express.Router();
 app.get("/", (req, res) => {
-    res.status(200);
-    res.json({ message: "hello AFSASDFAFS asdasdasdasd" });
+    res.json({ message: "hello FUCVK" });
 });
 router.get("/", (_req, res) => {
-    res.status(200);
     res.json({ message: "YO WHATSAP" });
 });
 app.use("/users", router);
