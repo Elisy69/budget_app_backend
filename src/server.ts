@@ -1,6 +1,9 @@
 import express from "express";
 import router from "./router.js";
+import morgan from "morgan";
 const app = express();
+
+app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
   res.json({ message: "MAIN ROUTE FOR API" });
