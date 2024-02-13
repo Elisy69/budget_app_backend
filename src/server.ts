@@ -8,6 +8,6 @@ app.get("/", (req, res) => {
 
 app.use("users", router);
 
-app.listen(5000, () => {
+app.listen(3001, () => {
   console.log("5000 port started");
 });
