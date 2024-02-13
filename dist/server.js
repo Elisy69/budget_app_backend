@@ -1,16 +1,12 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = __importDefault(require("express"));
-var app = (0, express_1.default)();
-app.get("/", function (req, res) {
+import express from "express";
+// import router from "./router";
+const app = express();
+app.get("/", (_req, res) => {
     console.log("hello from express");
     res.status(200);
     res.json({ message: "hello" });
 });
-app.listen(5000, function () {
+app.listen(5000, () => {
     console.log("5000 port started");
 });
 //# sourceMappingURL=server.js.map
