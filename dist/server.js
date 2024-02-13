@@ -2,7 +2,7 @@ import express from "express";
 const app = express();
 const router = express.Router();
 app.get("/", (req, res) => {
-    res.json({ message: "hello FUCVK" });
+    res.json({ message: "hello asdadsasdFUCVK" });
 });
 router.get("/", (_req, res) => {
     res.json({ message: "YO WHATSAP" });
