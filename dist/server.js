@@ -1,14 +1,8 @@
 import express from "express";
+import router from "./router.js";
 const app = express();
-const router = express.Router();
 app.get("/", (req, res) => {
-    res.json({ message: "asdasdasd hello asdadsasdFUCVK" });
-});
-app.get("/api/test", (req, res) => {
-    res.json({ message: "THIS IS TEST" });
-});
-router.get("/", (_req, res) => {
-    res.json({ message: "YO WHATSAP" });
+    res.json({ message: "MAIN ROUTE FOR API" });
 });
 app.use("/users", router);
 app.listen(5000, () => {
