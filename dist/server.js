@@ -5,11 +5,11 @@ app.get("/", (req, res) => {
     res.status(200);
     res.json({ message: "hello AFSASDFAFS" });
 });
-router.get("/users", (_req, res) => {
+router.get("/", (_req, res) => {
     res.status(200);
     res.json({ message: "YO WHATSAP" });
 });
-app.use("/api", router);
+app.use("/users", router);
 app.listen(5000, () => {
     console.log("5000 port started");
 });
