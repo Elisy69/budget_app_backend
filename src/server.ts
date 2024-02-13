@@ -4,7 +4,7 @@ const router = express.Router();
 
 app.get("/", (req, res) => {
   res.status(200);
-  res.json({ message: "hello AFSASDFAFS" });
+  res.json({ message: "hello AFSASDFAFS asdasdasdasd" });
 });
 
 router.get("/", (_req, res) => {
