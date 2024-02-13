@@ -1,5 +1,7 @@
 import { Router } from "express";
 const router = Router();
-router.get("/users", () => { });
+router.get("/users", (_req, res) => {
+    res.json({ message: "YO WHATSAP" });
+});
 export default router;
 //# sourceMappingURL=router.js.map
