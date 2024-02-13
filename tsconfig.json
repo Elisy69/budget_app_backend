@@ -5,8 +5,6 @@
     "rootDir": "./src",
     "strict": false,
     "lib": ["esnext"],
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "declaration": true
   },
