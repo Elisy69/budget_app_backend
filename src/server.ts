@@ -6,8 +6,8 @@ app.get("/", (req, res) => {
   res.json({ message: "MAIN ROUTE FOR API" });
 });
 
-app.use("users", router);
+app.use("/users", router);
 
-app.listen(3001, () => {
+app.listen(5000, () => {
   console.log("5000 port started");
 });
