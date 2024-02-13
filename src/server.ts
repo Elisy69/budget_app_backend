@@ -6,6 +6,10 @@ app.get("/", (req, res) => {
   res.json({ message: "hello asdadsasdFUCVK" });
 });
 
+app.get("/test", (req, res) => {
+  res.json({ message: "THIS IS TEST" });
+});
+
 router.get("/", (_req, res) => {
   res.json({ message: "YO WHATSAP" });
 });
