@@ -9,7 +9,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
-    res.status(404);
+    res.sendStatus(404);
 });
 app.use("/users", protect, router);
 app.listen(5000, () => {
