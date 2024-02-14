@@ -3,7 +3,6 @@ import router from "./router.js";
 import morgan from "morgan";
 import { signin } from "./handlers/users.js";
 import { createNewUser } from "./handlers/users.js";
-import { protect } from "./modules/auth.js";
 import * as dotenv from "dotenv";
 dotenv.config();
 const app = express();
@@ -13,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
     res.sendStatus(404);
 });
-app.use("/users", protect, router);
+app.use("/users", router);
 app.post("/newuser", createNewUser);
 app.post("/signin", signin);
 app.listen(5000, () => {

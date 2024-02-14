@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.sendStatus(404);
 });
 
-app.use("/users", protect, router);
+app.use("/users", router);
 
 app.post("/newuser", createNewUser);
 app.post("/signin", signin);
