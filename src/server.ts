@@ -19,9 +19,6 @@ app.get("/", (req, res) => {
 
 app.use("/users", router);
 
-app.post("/newuser", createNewUser);
-app.post("/signin", signin);
-
 app.listen(5000, () => {
   console.log("5000 port started");
 });
