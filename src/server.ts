@@ -7,6 +7,7 @@ import { protect } from "./modules/auth.js";
 import * as dotenv from "dotenv";
 dotenv.config();
 
+const PORT = 5000;
 const app = express();
 
 app.use(morgan("dev"));
@@ -17,8 +18,11 @@ app.get("/", (req, res) => {
   res.sendStatus(404);
 });
 
-app.use("/users", router);
+app.use("/users", protect, router);
 
-app.listen(5000, () => {
-  console.log("5000 port started");
+app.post("/newuser", createNewUser);
+app.post("/signin", signin);
+
+app.listen(PORT, () => {
+  console.log(`Server on ${PORT} port started`);
 });
