@@ -1,6 +1,8 @@
 import express from "express";
 import router from "./router.js";
 import morgan from "morgan";
+import { signin } from "./handlers/users.js";
+import { createNewUser } from "./handlers/users.js";
 import { protect } from "./modules/auth.js";
 import * as dotenv from "dotenv";
 dotenv.config();
@@ -16,6 +18,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", protect, router);
+
+app.use("/newuser", createNewUser);
+app.use("/signin", signin);
 
 app.listen(5000, () => {
   console.log("5000 port started");
