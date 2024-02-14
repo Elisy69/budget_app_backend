@@ -9,3 +9,53 @@ datasource db {
     provider = "postgresql"
     url      = env("DATABASE_URL")
 }
+
+model Users {
+    id                  String                @id @default(uuid())
+    username            String                @unique
+    password            String
+    Income_categories   Income_categories[]
+    Expenses_categories Expenses_categories[]
+    Incomes             Incomes[]
+    Expenses            Expenses[]
+}
+
+model Income_categories {
+    id        String    @id @default(uuid())
+    name      String
+    userId    String
+    belongsTo Users     @relation(fields: [userId], references: [id])
+    Incomes   Incomes[]
+}
+
+model Expenses_categories {
+    id        String     @id @default(uuid())
+    name      String
+    userId    String
+    belongsTo Users      @relation(fields: [userId], references: [id])
+    Expenses  Expenses[]
+}
+
+model Incomes {
+    id           String            @id @default(uuid())
+    year         Int
+    month        Int
+    base_amount  BigInt
+    comment      String?
+    userId       String
+    categoryId   String
+    belongsTo    Users             @relation(fields: [userId], references: [id])
+    categoryType Income_categories @relation(fields: [categoryId], references: [id])
+}
+
+model Expenses {
+    id           String              @id @default(uuid())
+    year         Int
+    month        Int
+    base_amount  BigInt
+    comment      String?
+    userId       String
+    categoryId   String
+    belongsTo    Users               @relation(fields: [userId], references: [id])
+    categoryType Expenses_categories @relation(fields: [categoryId], references: [id])
+}
