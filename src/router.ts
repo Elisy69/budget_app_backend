@@ -7,7 +7,9 @@ router.put(
   "/incomecat",
   body("name").isString(),
   handleInputErrors,
-  (req, res) => {},
+  (req, res) => {
+    console.log("HELLO INCOME CAT!");
+  },
 );
 
 export default router;
