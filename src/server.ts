@@ -20,6 +20,7 @@ app.get("/", (req, res) => {
 
 app.use("/data", protect, router);
 
+//-------authorization -----
 app.post("/newuser", createNewUser);
 app.post("/signin", signin);
 

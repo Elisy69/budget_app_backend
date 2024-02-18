@@ -14,10 +14,10 @@ model Users {
     id                  String                @id @default(uuid())
     username            String                @unique
     password            String
-    Income_categories   Income_categories[]
-    Expenses_categories Expenses_categories[]
-    Incomes             Incomes[]
-    Expenses            Expenses[]
+    income_categories   Income_categories[]
+    expenses_categories Expenses_categories[]
+    incomes             Incomes[]
+    expenses            Expenses[]
 }
 
 model Income_categories {
@@ -25,7 +25,7 @@ model Income_categories {
     name      String
     userId    String
     belongsTo Users     @relation(fields: [userId], references: [id])
-    Incomes   Incomes[]
+    incomes   Incomes[]
 }
 
 model Expenses_categories {
@@ -33,7 +33,7 @@ model Expenses_categories {
     name      String
     userId    String
     belongsTo Users      @relation(fields: [userId], references: [id])
-    Expenses  Expenses[]
+    expenses  Expenses[]
 }
 
 model Incomes {

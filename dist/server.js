@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
     res.sendStatus(404);
 });
 app.use("/data", protect, router);
+//-------authorization -----
 app.post("/newuser", createNewUser);
 app.post("/signin", signin);
 app.listen(PORT, () => {
