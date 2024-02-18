@@ -12,6 +12,7 @@ export const createJWT = (user) => {
 };
 export const protect = (req, res, next) => {
     const bearer = req.header.authorization;
+    console.log(req);
     console.log(bearer);
     console.log(req.header);
     if (!bearer) {
