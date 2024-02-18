@@ -1,9 +1,11 @@
 import prisma from "../db.js";
 
 export const getIncomeCat = async (req, res) => {
+  console.log(req);
+  console.log(req.user);
   const user = await prisma.users.findUnique({
     where: {
-      id: req.users.id,
+      id: req.user.id,
     },
     include: {
       income_categories: true,
