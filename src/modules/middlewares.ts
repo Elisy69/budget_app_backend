@@ -6,6 +6,7 @@ export const handleInputErrors = (req, res, next) => {
     res.status(400);
     res.json({ errors: errors.array() });
   } else {
+    console.log("ADSFKLJNDKLS:FGJNDJKS:GNDJKS:GNDJKLS:GN");
     next();
   }
 };
