@@ -5,9 +5,7 @@ import { getIncomeCat, createIncomeCat } from "./handlers/categories.js";
 
 const router = Router();
 
-router.put("/incomecat", handleInputErrors, createIncomeCat, (req, res) => {
-  console.log("HELLO INCOME CAT!");
-});
+router.put("/incomecat", handleInputErrors, createIncomeCat);
 
 router.get("/incomecat", getIncomeCat);
 
