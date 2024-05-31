@@ -18,6 +18,13 @@ app.get("/", (req, res) => {
   res.sendStatus(404);
 });
 
+// Логируем сообщение на сервере
+app.post('/log', (req, res) => {
+  console.log(req.body.message); 
+  res.status(200).send('Log received');
+});
+//
+
 app.use("/data", protect, router);
 
 //-------authorization -----
